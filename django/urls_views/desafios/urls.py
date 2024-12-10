@@ -1,8 +1,6 @@
 from django.urls import path
-from .views import domingo, segunda, terça
+from .views import desafio_semana
 
 urlpatterns = [
-    path("domingo", domingo),
-    path("segunda", segunda),
-    path("terça", terça),
+    path('<dia>', desafio_semana)
 ]
