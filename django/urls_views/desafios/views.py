@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
+
 
 desafios_dia_semana = {
     'domingo': 'Ler Livro sobre Django',
@@ -16,7 +18,8 @@ def desafio_semana_numero(request, dia):
     if dia > len(dias) or dia == 0:
         return HttpResponseNotFound("Dia inválido")
     dia_escolhido = dias[dia -1]
-    return HttpResponseRedirect("/desafios/" + dia_escolhido)
+    redireciona_rota = reverse("desafio_semanal", args=[dia_escolhido])
+    return HttpResponseRedirect(redireciona_rota)
     
 
 def desafio_semana(request, dia):
