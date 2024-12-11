@@ -11,8 +11,7 @@ desafios_dia_semana = {
     'quinta': 'Praticar um Esporte',
     'sexta': None,
     'sábado': 'Ir a Igreja'
-}
-
+    }
 def desafio_semana_numero(request, dia):
     dias = list(desafios_dia_semana.keys())
     if dia > len(dias) or dia == 0:
@@ -20,11 +19,15 @@ def desafio_semana_numero(request, dia):
     dia_escolhido = dias[dia -1]
     redireciona_rota = reverse("desafio_semanal", args=[dia_escolhido])
     return HttpResponseRedirect(redireciona_rota)
-    
 
+    
 def desafio_semana(request, dia):
     try:
         desafio = desafios_dia_semana[dia]
-        return render(request, "desafios/desafio.html")    
+        return render(request, "desafios/desafio.html", {
+            'desafio':desafio,
+            'dia':dia
+        })
     except:
-        return HttpResponse("Para esse parâmetro não há desafio")
+        return HttpResponseNotFound("Para esse parâmetro não há desafio")
+        # return render(request, "404.html")

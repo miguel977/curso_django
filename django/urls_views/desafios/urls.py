@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import desafio_semana, desafio_semana_numero
+from.views import desafio_semana, desafio_semana_numero
 
 urlpatterns = [
     path('<int:dia>', desafio_semana_numero),
