@@ -25,10 +25,6 @@ def desafio_semana_numero(request, dia):
 def desafio_semana(request, dia):
     try:
         desafio = desafios_dia_semana[dia]
-        # return render(request, "desafios/desafio.html", {
-        #     'desafio':desafio,
-        #     'dia':dia
-        # })
+        return render(request, "desafios/desafio.html")    
     except:
         return HttpResponse("Para esse parâmetro não há desafio")
-    return HttpResponse(desafio)
