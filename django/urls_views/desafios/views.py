@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
 
+def desafio_semana_numero(request, dia):
+    return HttpResponse(dia)
+    
+
 def desafio_semana(request, dia):
     desafio = ""
     if dia == 'domingo':
