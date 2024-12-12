@@ -7,11 +7,11 @@
 </head>
 <body>
     <ul>
-    {%  for dia in dias %}
-    <li>
-        <a href="">{{dia|title}}</a>
-    </li>
-    {% endfor %}
+        {% for dia in dias %}
+            <li>
+                <a href="{% url 'desafio_semanal' dia=dia %}">{{dia|title}}</a>
+            </li>
+        {% endfor %}
     </ul>
 </body>
 </html>
