@@ -35,4 +35,3 @@ def desafio_semana(request, dia):
         })
     except:
         return HttpResponseNotFound("Para esse parâmetro não há desafio")
-        # return render(request, "404.html")
