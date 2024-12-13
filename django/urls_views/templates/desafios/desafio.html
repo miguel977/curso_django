@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}    
+    {% include "./includes/header.html" %}
     <h1 style="text-align: center;">Desafio de {{dia|title}}</h1>
     <hr>
     {% if desafio is not None %}
